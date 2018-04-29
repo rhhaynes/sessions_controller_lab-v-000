@@ -9,8 +9,6 @@ class SessionsController < ApplicationController
     binding.pry
     if !!params[:name] && !params[:name].strip.empty?
       session[:name] = params[:name]
-    else
-      session[:name] = nil
     end
   end
   
