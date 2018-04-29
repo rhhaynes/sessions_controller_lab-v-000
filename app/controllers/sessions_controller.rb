@@ -8,7 +8,10 @@ class SessionsController < ApplicationController
   def create
     binding.pry
     if !!params[:name] && !params[:name].strip.empty?
-    session[:name] = params[:name]
+      session[:name] = params[:name]
+    else
+      session[:name] = nil
+    end
   end
   
   def destroy
