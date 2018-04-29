@@ -6,14 +6,12 @@ class SessionsController < ApplicationController
   end
   
   def create
-    binding.pry
     if !!params[:name] && !params[:name].strip.empty?
       session[:name] = params[:name]
     end
   end
   
   def destroy
-    binding.pry
     session.destroy if logged_in?
     redirect_to login_path
   end
