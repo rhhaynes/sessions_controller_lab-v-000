@@ -5,7 +5,9 @@ class SessionsController < ApplicationController
   end
   
   def create
-    if !!params[:name] && !params[:name].strip.empty? && !logged_in?
+    if logged_in?
+      redirect_to root_path
+    elsif !!params[:name] && !params[:name].strip.empty?
       session[:name] = params[:name]
     end
     redirect_to login_path
