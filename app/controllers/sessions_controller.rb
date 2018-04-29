@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   
   def create
     binding.pry
-    if !!params[:name] && !params[:name].gsub(\ {2,}\,"").empty?
+    if !!params[:name] && !params[:name].gsub(\ {1,}\,"").empty?
     session[:name] = params[:name]
   end
   
